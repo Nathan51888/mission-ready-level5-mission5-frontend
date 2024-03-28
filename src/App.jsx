@@ -4,8 +4,8 @@ import './App.css'
 function App() {
     const [messages, setMessages] = useState([]);
     const [messagesMapped, setMessagesMapped] = useState([]);
-    const backendHost = import.meta.env.BACKEND_SERVICE_HOST || 'localhost';
-    const backendPort = import.meta.env.BACKEND_SERVICE_PORT || 3000;
+    const backendHost = process.env.BACKEND_SERVICE_HOST || 'localhost';
+    const backendPort = process.env.BACKEND_SERVICE_PORT || 3000;
 
     function sendMessage() {
         fetch(`http://${backendHost}:${backendPort}/send`)
