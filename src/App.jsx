@@ -4,17 +4,15 @@ import './App.css'
 function App() {
     const [messages, setMessages] = useState([]);
     const [messagesMapped, setMessagesMapped] = useState([]);
-    const backendHost = process.env.BACKEND_SERVICE_HOST || 'localhost';
-    const backendPort = process.env.BACKEND_SERVICE_PORT || 3000;
 
     function sendMessage() {
-        fetch(`http://${backendHost}:${backendPort}/send`)
+        fetch('https://mission5.nathan.test/api/send')
             .then(res => res.json())
             .then(res => console.log(res));
     }
 
     function getMessages() {
-        fetch(`http://${backendHost}:${backendPort}/get`)
+        fetch('https://mission5.nathan.test/api/get')
             .then(res => res.json())
             .then(res => {
                 console.log(res);
@@ -24,6 +22,7 @@ function App() {
 
     useEffect(() => {
         const mapped = messages.map((message, id) => {
+            if (!message) return;
             console.log(message);
             return <p key={id}>{message.message}</p>;
         });
