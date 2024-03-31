@@ -1,11 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css'
 
+// Components
+import StationListComponent from './components/filter/StationListComponent';
+
+
 function App() {
+    const [service, setService] = useState('');
+    const [sortOption, setSortOption] = useState('');
 
     return (
         <>
-            <div></div>
+            <StationListComponent service={service} sortOption={sortOption} />
         </>
     )
 }

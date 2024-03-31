@@ -1,0 +1,78 @@
+.station {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.8rem;
+
+    width: 24.4375rem;
+    padding: 1.88rem;
+
+    flex-shrink: 0;
+    border-radius: 0.25rem;
+    background: #FFF;
+    filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.03));
+}
+
+.name {
+    color: #2E26A0;
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 1.13rem;
+}
+
+.distance {
+    color: #333;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.81rem;
+}
+
+.location {
+    color: #999;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.gas {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    margin-bottom: 1.81rem;
+}
+
+.tags {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: end;
+    align-items: center;
+    row-gap: 0.63rem;
+}
+
+.ellipse {
+    position: relative;
+    text-align: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+}
+
+p.ellipse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    color: #FFF;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
