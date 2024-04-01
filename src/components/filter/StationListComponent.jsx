@@ -3,7 +3,7 @@ import StationComponent from './StationComponent'
 
 function StationListComponent({ stationList, service, sortOption }) {
     const mappedList = stationList.map((item, index) => {
-        return <StationComponent key={index} station={item} />
+        return <StationComponent key={index} station={item} service={service} />
     });
 
     return (

@@ -20,9 +20,24 @@ function App() {
             .catch((err) => console.log(err));
     }, []);
 
+    function switchService() {
+        switch (service) {
+            case '':
+                setService('carWash');
+                break;
+            case 'carWash':
+                setService('evCharging');
+                break;
+            default:
+                setService('');
+                break;
+        }
+    }
+
     return (
         <>
             <StationListComponent stationList={stationList} service={service} sortOption={sortOption} />
+            <button onClick={switchService}>Switch Service</button>
         </>
     )
 }
