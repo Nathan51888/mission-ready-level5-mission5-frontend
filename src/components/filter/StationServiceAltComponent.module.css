@@ -1,0 +1,11 @@
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.icons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.44rem;
+}
