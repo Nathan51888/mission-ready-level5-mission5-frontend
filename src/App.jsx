@@ -3,6 +3,7 @@ import './App.css'
 
 // Components
 import StationListComponent from './components/filter/StationListComponent';
+import MapComponent from './components/map/MapComponent';
 
 
 function App() {
@@ -36,8 +37,11 @@ function App() {
 
     return (
         <>
-            <StationListComponent stationList={stationList} service={service} sortOption={sortOption} />
-            <button onClick={switchService}>Switch Service</button>
+            <div className='app'>
+                <StationListComponent stationList={stationList} service={service} sortOption={sortOption} />
+                <MapComponent stationList={stationList} />
+                <button onClick={switchService}>Switch Service</button>
+            </div>
         </>
     )
 }
