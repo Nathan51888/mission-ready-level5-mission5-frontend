@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { APIProvider } from '@vis.gl/react-google-maps'
 import './App.css'
 
 // Components
@@ -37,11 +38,13 @@ function App() {
 
     return (
         <>
-            <div className='app'>
-                <StationListComponent stationList={stationList} service={service} sortOption={sortOption} />
-                <MapComponent stationList={stationList} />
-                <button onClick={switchService}>Switch Service</button>
-            </div>
+            <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+                <div className='app'>
+                    <StationListComponent stationList={stationList} service={service} sortOption={sortOption} />
+                    <MapComponent stationList={stationList} />
+                    <button onClick={switchService}>Switch Service</button>
+                </div>
+            </APIProvider>
         </>
     )
 }

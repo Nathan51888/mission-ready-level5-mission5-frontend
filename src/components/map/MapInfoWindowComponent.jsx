@@ -1,6 +1,6 @@
 import React from 'react'
 
-function MapInfoWindowComponent() {
+function MapInfoWindowComponent({ station }) {
   return (
     <div>MapInfoWindowComponent</div>
   )
