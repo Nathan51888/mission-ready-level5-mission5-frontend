@@ -4,3 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.gm-style .gm-style-iw {
+    padding: 0 !important;
+    border-radius: 0;
+    box-shadow: none;
+}

@@ -1,7 +1,5 @@
-import styles from './StationServiceComponent.module.css'
+import styles from './StationServiceTagsComponent.module.css'
 
-// Icon imports
-import ellipse from '../../assets/Ellipse 1.svg'
 import carWashIcon from '../../assets/service-icons/service-car-wash.png'
 import evChargingIcon from '../../assets/service-icons/service-EV-charging.png'
 import preOrderCoffeeIcon from '../../assets/service-icons/service-pre-order-coffee.png'
@@ -10,8 +8,7 @@ import engineOilsIcon from '../../assets/service-icons/service-engine-oils.png'
 import lpgBottleSwapIcon from '../../assets/service-icons/service-LPG-bottle-swap.png'
 import giftCardsIcon from '../../assets/service-icons/service-gift-cards.png'
 
-
-function StationServiceComponent({ station }) {
+function StationServiceTagsComponent({ station }) {
     const mappedServiceIcon = station.services.map((item, index) => {
         switch (item) {
             case 'carWash':
@@ -32,32 +29,11 @@ function StationServiceComponent({ station }) {
                 break;
         }
     });
-
-    return (
-        <div>
-            <div className={styles.gas}>
-                <div className={styles.ellipse}>
-                    <p className={styles.ellipse}>91</p>
-                    <img src={ellipse} />
-                </div>
-                <div className={styles.ellipse}>
-                    <p className={styles.ellipse}>95</p>
-                    <img src={ellipse} />
-                </div>
-                <div className={styles.ellipse}>
-                    <p className={styles.ellipse}>98</p>
-                    <img src={ellipse} />
-                </div>
-                <div className={styles.ellipse}>
-                    <p className={styles.ellipse}>D</p>
-                    <img src={ellipse} />
-                </div>
-            </div>
+  return (
             <div className={styles.tags}>
                 {mappedServiceIcon}
             </div>
-        </div>
-    )
+  )
 }
 
-export default StationServiceComponent
+export default StationServiceTagsComponent
