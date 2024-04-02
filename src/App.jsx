@@ -12,8 +12,11 @@ function App() {
     const [sortOption, setSortOption] = useState('');
     const [stationList, setStationList] = useState([]);
 
+    const backendPath = import.meta.env.VITE_BACKEND;
+    console.log(backendPath);
+
     useEffect(() => {
-        fetch('http://localhost:3000/get')
+        fetch(`${backendPath}/get`)
             .then((res) => res.json())
             .then((res) => {
                 console.log(res);
