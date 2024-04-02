@@ -3,7 +3,7 @@ import { APIProvider } from '@vis.gl/react-google-maps'
 import './App.css'
 
 // Components
-import StationListComponent from './components/filter/StationListComponent';
+import StationListComponent from './components/station/StationListComponent';
 import MapComponent from './components/map/MapComponent';
 
 
