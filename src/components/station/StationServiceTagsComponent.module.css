@@ -1,0 +1,10 @@
+.tags {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    justify-items: end;
+    align-items: center;
+    column-gap: 1.5rem;
+    row-gap: 0.63rem;
+    width: max-content;
+    padding: 0 0.38rem;
+}

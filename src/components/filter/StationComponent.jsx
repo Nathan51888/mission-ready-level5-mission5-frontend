@@ -1,5 +1,5 @@
 import styles from './StationComponent.module.css'
-import StationServiceComponent from './StationServiceComponent'
+import StationServiceDefaultComponent from './StationServiceDefaultComponent'
 import StationServiceAltComponent from './StationServiceAltComponent';
 
 function StationComponent({ station, service }) {
@@ -10,7 +10,7 @@ function StationComponent({ station, service }) {
             serviceComponent = <StationServiceAltComponent service={service} status={'busy'} />;
             break;
         default:
-            serviceComponent = <StationServiceComponent station={station} service={service} />;
+            serviceComponent = <StationServiceDefaultComponent station={station} />;
             break;
     }
 

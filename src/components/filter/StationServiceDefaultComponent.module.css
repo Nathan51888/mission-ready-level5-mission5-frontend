@@ -1,16 +1,14 @@
+.service {
+    width: max-content;
+    justify-self: end;
+}
+
 .gas {
     display: flex;
     justify-content: flex-end;
+    width: max-content;
     gap: 0.6rem;
     margin-bottom: 1.81rem;
-}
-
-.tags {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: end;
-    align-items: center;
-    row-gap: 0.63rem;
 }
 
 .ellipse {
