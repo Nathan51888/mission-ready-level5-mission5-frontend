@@ -1,11 +1,10 @@
 import { AdvancedMarker, InfoWindow, useAdvancedMarkerRef } from "@vis.gl/react-google-maps";
 import { useState } from "react";
 
-import styles from './MapMarkerComponent.module.css';
-import mapMarker from '../../assets/map-marker.svg';
 import MapInfoWindowComponent from "./MapInfoWindowComponent";
+import MapMarkerIconComponent from "./MapMarkerIconComponent";
 
-function MapMarkerComponent({ position, station }) {
+function MapMarkerComponent({ position, station, service, status }) {
     const [markerRef, marker] = useAdvancedMarkerRef();
     const [infowindowShown, setInfowindowShown] = useState(false);
 
@@ -19,10 +18,7 @@ function MapMarkerComponent({ position, station }) {
                 position={position}
                 onClick={toggleInfoWindow}
             >
-                <div className={styles.marker}>
-                    <p className={styles.marker_text}>Z</p>
-                    <img src={mapMarker} />
-                </div>
+                <MapMarkerIconComponent service={service} status={status} />
             </AdvancedMarker>
             {infowindowShown && (
                 <InfoWindow anchor={marker} onCloseClick={closeInfoWindow}>

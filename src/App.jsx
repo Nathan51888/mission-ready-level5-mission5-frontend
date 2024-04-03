@@ -12,6 +12,7 @@ function App() {
     const [service, setService] = useState('');
     const [sort, setSort] = useState('');
     const [stationList, setStationList] = useState([]);
+    const [status, setStatus] = useState('busy');
 
     const backendPath = import.meta.env.VITE_BACKEND;
     console.log(backendPath);
@@ -26,28 +27,20 @@ function App() {
             .catch((err) => console.log(err));
     }, [backendPath]);
 
-    function switchService() {
-        switch (service) {
-            case '':
-                setService('carWash');
-                break;
-            case 'carWash':
-                setService('evCharging');
-                break;
-            default:
-                setService('');
-                break;
-        }
+    function switchStatus() {
+        if (status === 'busy') return setStatus('available');
+        setStatus('busy');
     }
 
     return (
         <>
             <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
                 <div className='app'>
+                    <button onClick={switchStatus}>Switch Status</button>
                     <FilterComponent setService={setService} sort={sort} />
                     <div className='main'>
-                        <StationListComponent stationList={stationList} service={service} sort={sort} />
-                        <MapComponent stationList={stationList} />
+                        <StationListComponent stationList={stationList} service={service} sort={sort} status={status} />
+                        <MapComponent stationList={stationList} service={service} status={status} />
                     </div>
                 </div>
             </APIProvider>

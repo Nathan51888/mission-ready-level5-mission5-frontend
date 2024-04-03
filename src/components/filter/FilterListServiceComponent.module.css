@@ -8,6 +8,7 @@
     width: 8rem;
     height: 2.625rem;
     flex-shrink: 0;
+    border: none;
     border-radius: 2.5rem;
     background: linear-gradient(90deg, #1D196A 0%, #2E26A0 100%);
 

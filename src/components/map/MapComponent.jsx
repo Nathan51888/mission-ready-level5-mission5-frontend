@@ -2,7 +2,7 @@ import { Map, useMap, useMapsLibrary } from "@vis.gl/react-google-maps";
 import { useState, useEffect } from 'react';
 import MapMarkerComponent from './MapMarkerComponent';
 
-function MapComponent({ stationList }) {
+function MapComponent({ stationList, service, status }) {
     const map = useMap();
     const geocodingLib = useMapsLibrary('geocoding');
 
@@ -23,12 +23,12 @@ function MapComponent({ stationList }) {
                     alert('Geocode error: ' + status);
                 }
             })
-            markerElement = <MapMarkerComponent key={index} position={markerPosition} station={station} />;
+            markerElement = <MapMarkerComponent key={index} position={markerPosition} station={station} service={service} status={status} />;
             return markerElement;
         })).then((values) => {
             setMarkers(values);
         })
-    }, [geocodingLib, map, stationList]);
+    }, [geocodingLib, map, stationList, service, status]);
 
     return (
         <>
