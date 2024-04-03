@@ -3,13 +3,14 @@ import { APIProvider } from '@vis.gl/react-google-maps'
 import './App.css'
 
 // Components
+import FilterComponent from './components/filter/FilterComponent';
 import StationListComponent from './components/station/StationListComponent';
 import MapComponent from './components/map/MapComponent';
 
 
 function App() {
     const [service, setService] = useState('');
-    const [sortOption, setSortOption] = useState('');
+    const [sort, setSort] = useState('');
     const [stationList, setStationList] = useState([]);
 
     const backendPath = import.meta.env.VITE_BACKEND;
@@ -43,9 +44,11 @@ function App() {
         <>
             <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
                 <div className='app'>
-                    <StationListComponent stationList={stationList} service={service} sortOption={sortOption} />
-                    <MapComponent stationList={stationList} />
-                    <button onClick={switchService}>Switch Service</button>
+                    <FilterComponent setService={setService} sort={sort} />
+                    <div className='main'>
+                        <StationListComponent stationList={stationList} service={service} sort={sort} />
+                        <MapComponent stationList={stationList} />
+                    </div>
                 </div>
             </APIProvider>
         </>

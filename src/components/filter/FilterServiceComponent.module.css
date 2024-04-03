@@ -1,0 +1,69 @@
+.service_select h4 {
+    font-family: "Inter";
+    color: #000;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.5rem;
+}
+
+.dropdown_button {
+    appearance: none;
+    width: 12.5rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border: 1px solid #F2F2F2;
+
+    background-color: #FFFFFF;
+    color: #999;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown_button img {
+    width: 0.8125rem;
+    height: 0.75rem;
+}
+
+.dropdown:hover .content {
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.content {
+    display: none;
+    position: absolute;
+    width: 12.5rem;
+    padding: 0 1rem;
+    border: 1px solid #D5D5D5;
+    background: #FFF;
+}
+
+.content button {
+    display: grid;
+    grid-template-columns: 3rem auto;
+    background: #FFF;
+    border: none;
+    border-bottom: 1px #F2F2F2 solid;
+    padding: 0.94rem 0.7rem;
+}
+
+.content button:hover {
+    background-color: #F8F8F8;
+}
+
+.content button span {
+    width: max-content;
+    justify-self: start;
+    align-self: center;
+}

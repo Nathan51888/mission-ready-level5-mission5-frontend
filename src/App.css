@@ -1,14 +1,18 @@
 body {
     background: #F8F8F8;
+    height: 100vh;
 }
 
 .app {
     display: grid;
-    grid-template-areas:
-        "navbar navbar"
-        "filter filter"
-        "list map";
-    grid-template-columns: max-content auto;
+    grid-template-rows: max-content auto;
+    height: 100vh;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: min-content auto;
     gap: 1rem;
-    margin: 0 9.94rem;
+    padding: 1rem 9.94rem;
+    height: 100%;
 }
