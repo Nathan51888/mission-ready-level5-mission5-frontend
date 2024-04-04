@@ -6,12 +6,24 @@ function StationListComponent({ stationList, service, sort, status }) {
     const [mappedStationList, setMappedStationList] = useState();
 
     useEffect(() => {
-        const mappedList = stationList.map((item, index) => {
+        if (service === '') {
+            mapList(stationList);
+            return;
+        }
+        const filteredList = stationList.filter((item) => {
+            const isMatching = item.services.some(item => (item === service));
+            return isMatching;
+        })
+        console.log(filteredList);
+        mapList(filteredList);
+    }, [stationList, service, status, sort]);
+
+    function mapList(list) {
+        const mappedList = list.map((item, index) => {
             return <StationComponent key={index} station={item} service={service} status={status} />
         });
-        console.log("mapped station list")
         setMappedStationList(mappedList);
-    }, [stationList, service, status]);
+    }
 
     return (
         <div className={styles.list}>

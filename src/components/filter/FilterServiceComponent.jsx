@@ -76,7 +76,7 @@ function FilterServiceComponent({ setService }) {
                     <option value='carWash'>Car wash</option>
                     <option value='food'>Food and drink</option>
                     <option value='evCharging'>EV charging</option>
-                    <option value='refueling'>Refueling</option>
+                    <option value=''>Show all</option>
                 </select>
             </div>
         </>
