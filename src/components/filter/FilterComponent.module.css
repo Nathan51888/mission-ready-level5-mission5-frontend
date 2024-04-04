@@ -1,4 +1,5 @@
 .filter {
+    flex: none;
     background: #FFF;
     padding: 1rem 15%;
 }

@@ -36,7 +36,6 @@ function App() {
         <>
             <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
                 <div className='app'>
-                    <button onClick={switchStatus}>Switch Status</button>
                     <FilterComponent setService={setService} setSort={setSort} />
                     <div className='main'>
                         <StationListComponent stationList={stationList} service={service} sort={sort} status={status} />
