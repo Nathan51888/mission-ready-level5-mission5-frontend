@@ -21,7 +21,7 @@ function App() {
         fetch(`${backendPath}/get`)
             .then((res) => res.json())
             .then((res) => {
-                console.log(res);
+                console.log("fetched station list");
                 setStationList(res);
             })
             .catch((err) => console.log(err));

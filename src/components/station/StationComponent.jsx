@@ -1,18 +1,26 @@
 import styles from './StationComponent.module.css'
 import StationServiceDefaultComponent from './StationServiceDefaultComponent'
 import StationServiceAltComponent from './StationServiceAltComponent';
+import StationServicePriceComponent from './StationServicePriceComponent';
+import { useEffect, useState } from 'react';
 
-function StationComponent({ station, service, status }) {
-    let serviceComponent;
-    switch(service) {
-        case 'carWash':
-        case 'evCharging':
-            serviceComponent = <StationServiceAltComponent service={service} status={status} />;
-            break;
-        default:
-            serviceComponent = <StationServiceDefaultComponent station={station} />;
-            break;
-    }
+function StationComponent({ station, service, status, sort }) {
+    const [serviceComponent, setServiceComponent] = useState();
+    useEffect(() => {
+        if (service === 'carWash' || service === 'evCharging') {
+            console.log('station alt')
+            setServiceComponent(<StationServiceAltComponent service={service} status={status} />);
+            return;
+        }
+        if (sort === 'cheapest') {
+            console.log('station price')
+            setServiceComponent(<StationServicePriceComponent station={station} />);
+            return;
+        }
+        console.log('station default')
+        setServiceComponent(<StationServiceDefaultComponent station={station} />);
+        return;
+    }, [station, service, sort, status]);
 
     return (
         <div className={styles.station}>
