@@ -17,9 +17,6 @@ function App() {
     const backendPath = import.meta.env.VITE_BACKEND;
     console.log(backendPath);
 
-    const backendPath = import.meta.env.VITE_BACKEND;
-    console.log(backendPath);
-
     useEffect(() => {
         fetch(`${backendPath}/get`)
             .then((res) => res.json())
