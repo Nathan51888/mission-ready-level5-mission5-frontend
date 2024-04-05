@@ -18,7 +18,7 @@ function App() {
     console.log(backendPath);
 
     useEffect(() => {
-        fetch(`${backendPath}/get`)
+        fetch(`${backendPath}/api/get`)
             .then((res) => res.json())
             .then((res) => {
                 console.log("fetched station list");
@@ -35,6 +35,7 @@ function App() {
     return (
         <>
             <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
+                <button onClick={switchStatus}>Switch Status</button>
                 <div className='app'>
                     <FilterComponent setService={setService} setSort={setSort} />
                     <div className='main'>
