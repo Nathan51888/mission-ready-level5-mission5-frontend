@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: frontend
-  replicas: 2
+  replicas: 3
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -28,14 +28,9 @@ spec:
         image: mission5-frontend
         imagePullPolicy: Never
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
           name: frontend
-        env:
-        - name: DB_URL
-          valueFrom:
-            configMapKeyRef:
-              name: mongo-config
-              key: mongo-url
+      restartPolicy: Always
 ---
 # https://kubernetes.io/docs/concepts/services-networking/service/
 apiVersion: v1
@@ -53,3 +48,4 @@ spec:
     port: 8080
     targetPort: 8080
 ---
+
