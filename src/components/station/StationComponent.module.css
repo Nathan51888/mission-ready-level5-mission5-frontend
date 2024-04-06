@@ -1,0 +1,43 @@
+.station {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.8rem;
+
+    width: 24.4375rem;
+    padding: 1.88rem;
+
+    flex-shrink: 0;
+    border-radius: 0.25rem;
+    background: #FFF;
+    filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.03));
+}
+
+.name {
+    color: #2E26A0;
+    font-family: Inter;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 1.13rem;
+}
+
+.distance {
+    color: #333;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 0.81rem;
+}
+
+.location {
+    color: #999;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+

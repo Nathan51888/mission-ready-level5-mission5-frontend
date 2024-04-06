@@ -1,0 +1,40 @@
+.list {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.list input {
+    display: none;
+}
+
+.list label {
+    display: inline-block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 9.4375rem;
+    padding: 0.6rem 0;
+    margin-bottom: 0.5rem;
+    border-radius: 1.25rem;
+    border: 1px solid #ED560F;
+    background-color: white;
+    cursor: pointer;
+
+    text-align: center;
+    color: #ED560F;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+input[id='nearby']:checked ~ .nearby,
+input[id='cheapest']:checked ~ .cheapest,
+input[id='evCharging']:checked ~ .evCharging,
+input[id='premium']:checked ~ .premium,
+input[id='unleaded']:checked ~ .unleaded,
+input[id='diesel']:checked ~ .diesel {
+    background-color: #FF5732;
+    color: #FFF;
+}

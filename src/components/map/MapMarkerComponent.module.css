@@ -1,0 +1,17 @@
+.marker {
+    position: relative;
+    text-align: center;
+}
+
+.marker_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    color: white;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}

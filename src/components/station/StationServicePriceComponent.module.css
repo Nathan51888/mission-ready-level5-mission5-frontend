@@ -1,0 +1,49 @@
+.service {
+    display: flex;
+    justify-content: end;
+    align-items: start;
+}
+
+.group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.gas {
+    display: flex;
+    justify-content: flex-end;
+    width: max-content;
+    gap: 0.6rem;
+    margin-bottom: 1.81rem;
+}
+
+.ellipse {
+    position: relative;
+    text-align: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+}
+
+p.ellipse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    color: #FFF;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.price {
+    color: #000;
+    font-family: Inter;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
